@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+
+}
+body{
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+div.galeria-modal{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.26);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 4%;
+    visibility: hidden;
+    z-index: 5;
+}
+.img-modal{
+    display: flex;
+    align-items: center;
+}
+div.galeria-modal span{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: rgb(131, 20, 20);
+}
+div .galeria-modal img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+section{
+    min-height: 100vh; /*Aqui temos 100% na autura da linha em relação a tela do nosso computador*/
+    width: 100%;
+}
+div.galeria{
+    width: 100%;
+    padding: 2%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*Aqui vamos ter quatro colunas ocupando uma franção*/
+    grid-auto-rows: 30vh; /*Aqui temos 30% na autura da linha em relação a tela do nosso computador*/
+}
+div.galeria div.single-galeria{
+    border-radius: 5px;
+    margin: 0.5vw;
+    overflow: hidden; /*Corta o resto que ultrapassar o tamanho da sua div*/
+}
+
+.h2{
+    grid-row: span 2; /*Aquem receber essa class vai acabar ocupando o espaço de duas linhas */
+}
+.w-2{
+    grid-column: span 2; /*Aquem receber essa class vai acabar ocupando o espaço de duas colunas */
+}
+div.galeria div.single-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    cursor: pointer;  /*Cursur da mãozinha*/
+    transition: transform 0.25s ease-in-out; /*Maior tempo para termos a ampliação da imagem quando passamos o mouse*/
+}
+div.galeria div.single-galeria img:hover {
+    transform: scale(1.1); /*Amplia a sua imagem dando um efeito de crescimento*/
+}
+
+
+@media screen and (max-width: 764px){
+    div.galeria{
+        
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-auto-rows: 15vh; 
+    }
+}
