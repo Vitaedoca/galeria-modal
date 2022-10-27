@@ -1,11 +1,14 @@
-const gM = document.querySelector(".galeria-modal");
-const iGM = document.querySelector(".galeria-modal img");
+const galeriaModal = document.querySelector(".galeria-modal");
+const imgGaleriaModal = document.querySelector(".galeria-modal img");
 
-function fechaGaleria(){
-    gM.style.visibility = "hidden"; /*Aqui colocamos que a visibilidade dele vai ser oculta*/
+
+function fecharGaleria(){
+    galeriaModal.style.visibility = "hidden";
+    imgGaleriaModal.style.transform = "scale(0)";
 }
-function abriGaleria(src){
-    gM.style.visibility = "visible";
-    iGM.style.transform = "scale(1)";
-    iGM.src = src
+
+function abrirGaleria(src){
+    galeriaModal.style.visibility  = "visible";
+    imgGaleriaModal.style.transform = "scale(1)";
+    imgGaleriaModal.src = src;
 }
